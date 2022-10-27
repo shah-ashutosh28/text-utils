@@ -4,7 +4,7 @@ import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Alert from './components/Alert';
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
     },2000)
   }
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Navbar mode={mode} togglemode={togglemode}/>
     <Alert alert={alert}/>
       <Routes>
@@ -42,7 +42,7 @@ function App() {
           
           <Route exact path="/about" element={<About mode={mode}/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     
   );
 }
